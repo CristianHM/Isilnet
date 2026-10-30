@@ -1,0 +1,167 @@
+/* ===== Variables ===== */
+:root {
+  --bg: #ffffff;
+  --page: #f3f5f8;
+  --text: #1d2530;
+  --muted: #6c7a89;
+  --line: #dfe5ec;
+  --blue: #00a9ff;
+  --blue-t: #0091dd;
+  --blue-d: #0088cc;
+  --soft: #e8f6ff;
+  --yellow: #ffc72c;
+  --red: #ff3b30;
+  --ok: #198754;
+  --ok-soft: #e6f4ec;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14.5px/1.55 Montserrat, system-ui, "Segoe UI", Roboto, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+h1 { margin: 6px 0; text-align: center; color: var(--blue-t); font-weight: 500; font-size: 30px; }
+h2 { margin: 0; }
+label { display: block; font-size: 12.5px; font-weight: 700; margin-bottom: 4px; }
+input, select {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--line);
+  border-radius: 6px; background: #fff; color: var(--text); font: inherit; font-size: 14px;
+}
+input:focus, select:focus { outline: 2px solid var(--blue); border-color: var(--blue); }
+textarea { width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 6px; font: inherit; min-height: 70px; }
+
+/* ===== Cabecera ===== */
+.cabecera {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--blue); color: #fff; height: 60px; padding: 0 32px;
+  box-shadow: 0 2px 6px #0002; position: relative; z-index: 2;
+}
+.logo { font-size: 24px; font-weight: 800; letter-spacing: 2px; }
+.logo i { font-style: normal; font-weight: 400; margin: 0 4px; }
+.usuario { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; }
+.avatar {
+  position: relative; width: 38px; height: 38px; border-radius: 50%;
+  background: #fff; display: grid; place-items: center; font-size: 20px; filter: grayscale(1);
+}
+.avatar::after {
+  content: ""; position: absolute; right: 0; bottom: 0; width: 10px; height: 10px;
+  border-radius: 50%; background: #2ecc71; border: 2px solid #fff;
+}
+
+/* ===== Página 1: plataforma ISIL|NET ===== */
+.contenedor { display: flex; min-height: calc(100vh - 60px); }
+.menu { width: 250px; flex-shrink: 0; padding: 24px 18px; border-right: 1px solid var(--line); }
+.modo { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 26px; }
+.modo select { width: auto; font-weight: 700; color: var(--blue); padding: 7px 10px; }
+.menu nav a { display: flex; align-items: center; gap: 12px; padding: 10px 6px; color: var(--muted); font-weight: 600; }
+.menu nav a span { filter: grayscale(1); width: 20px; text-align: center; }
+.menu nav a:hover, .menu nav a.activo { color: var(--blue); }
+.principal { flex: 1; min-width: 0; max-width: 1100px; padding: 28px 36px; }
+
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin-bottom: 28px; }
+.tarjeta { display: flex; border-radius: 10px; overflow: hidden; min-height: 92px; color: #fff; font-weight: 700; box-shadow: 0 2px 6px #0002; }
+.tarjeta .icono { width: 78px; background: #ececec; display: grid; place-items: center; font-size: 32px; filter: grayscale(1); }
+.tarjeta .texto { flex: 1; background: var(--blue); padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.tarjeta.roja .texto { background: #ff0000; }
+
+.acordeones { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px 32px; align-items: start; margin-top: 26px; }
+.acordeon { background: var(--yellow); border-radius: 10px; box-shadow: 0 2px 5px #0002; overflow: hidden; color: #000; }
+.acordeon button {
+  all: unset; box-sizing: border-box; width: 100%; display: flex; justify-content: space-between;
+  align-items: center; padding: 20px 24px; font-weight: 700; cursor: pointer;
+}
+.acordeon .contenido { display: none; background: #fff; padding: 4px 0; }
+.acordeon.abierto .contenido { display: block; }
+.acordeon .flecha { transition: .2s; }
+.acordeon.abierto .flecha { transform: rotate(180deg); }
+.opcion { display: flex; align-items: center; gap: 10px; padding: 12px 24px; font-weight: 600; border-top: 1px solid var(--line); }
+a.opcion:hover { background: var(--soft); color: var(--blue-d); }
+.opcion.inactiva { color: var(--muted); }
+.nuevo { font-size: 10px; background: var(--red); color: #fff; border-radius: 10px; padding: 2px 8px; font-weight: 700; }
+
+/* ===== Elementos comunes al estilo ISIL|NET ===== */
+.pastilla { border-radius: 30px; padding: 9px 20px; font-weight: 700; color: #fff; background: var(--blue); margin: 14px 0; }
+.pastilla.amarilla { background: var(--yellow); color: #111; }
+.pastilla.verde { background: var(--ok); margin-top: 0; }
+.subtitulo { color: var(--blue-t); font-weight: 700; text-transform: uppercase; margin: 22px 0 8px; font-size: 14px; }
+.subtitulo.primero { margin-top: 0; }
+.etiqueta { display: inline-block; border-radius: 6px; padding: 1px 9px; font-size: 12px; font-weight: 600; color: #111; background: var(--yellow); }
+.etiqueta.azul { background: var(--blue); color: #fff; }
+.etiqueta.roja { background: var(--red); color: #fff; }
+.boton { border: 0; background: var(--blue); color: #fff; padding: 11px 24px; border-radius: 30px; font: inherit; font-weight: 700; cursor: pointer; display: inline-block; }
+.boton:hover { background: var(--blue-d); }
+.boton.borde { background: #fff; color: var(--blue); border: 1px solid var(--blue); }
+.boton:disabled { opacity: .5; cursor: not-allowed; }
+.acciones { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.acciones.centro { justify-content: center; }
+.centro { text-align: center; }
+.gris { color: var(--muted); }
+
+/* ===== Página 2: ventana del trámite ===== */
+.fondo { background: var(--page); min-height: calc(100vh - 60px); padding: 26px 16px; }
+.hoja { max-width: 1100px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #0001; padding: 26px 36px 34px; }
+.volver { color: var(--muted); font-size: 13px; font-weight: 600; }
+.volver:hover { color: var(--blue); }
+.intro { text-align: center; color: var(--muted); margin: 0 auto 22px; max-width: 760px; }
+
+.pasos { display: flex; gap: 6px; margin-bottom: 26px; overflow-x: auto; padding-bottom: 4px; }
+.paso { flex: 1; min-width: 84px; text-align: center; font-size: 12px; color: var(--muted); }
+.paso i { display: grid; place-items: center; width: 28px; height: 28px; margin: 0 auto 4px; border-radius: 50%; background: var(--line); font-style: normal; font-weight: 700; }
+.paso.hecho i { background: var(--ok); color: #fff; }
+.paso.actual i { background: var(--blue); color: #fff; }
+.paso.actual { color: var(--text); font-weight: 700; }
+
+.dividido { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: start; }
+.panel { border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+.panel.imagen { background: var(--soft); border-color: #cfe9fa; position: sticky; top: 16px; }
+.fila { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.error { color: var(--red); font-size: 12px; min-height: 16px; margin-top: 3px; }
+.foto { display: flex; align-items: center; gap: 14px; background: var(--soft); border-radius: 10px; padding: 12px 14px; font-size: 13px; }
+.foto-perfil { width: 54px; height: 54px; border-radius: 50%; background: var(--line); display: grid; place-items: center; font-size: 26px; flex-shrink: 0; filter: grayscale(1); }
+.carne { width: 100%; height: auto; display: block; filter: drop-shadow(0 6px 10px #0002); }
+.carne text { font-family: Montserrat, system-ui, sans-serif; }
+.leyenda { text-align: center; color: var(--muted); font-size: 12px; margin: 10px 0 0; }
+.lista { margin: 0; padding-left: 18px; font-size: 13px; }
+
+.caja { border: 1px solid var(--line); border-radius: 12px; padding: 24px; max-width: 760px; margin: 0 auto; }
+.caja.ancha { max-width: none; }
+.circulo-ok { width: 64px; height: 64px; border-radius: 50%; background: var(--ok-soft); color: var(--ok); display: grid; place-items: center; font-size: 32px; margin: 0 auto 10px; }
+.codigo { display: inline-block; font: 700 26px ui-monospace, Consolas, monospace; letter-spacing: 2px; background: var(--soft); border: 1px dashed var(--blue); padding: 10px 22px; border-radius: 10px; margin: 8px 0; }
+.encabezado-caja { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+.linea-tiempo { display: flex; margin: 22px 0 8px; overflow-x: auto; padding-bottom: 6px; }
+.evento { flex: 1; min-width: 110px; text-align: center; position: relative; font-size: 12.5px; color: var(--muted); }
+.evento::before { content: ""; position: absolute; top: 13px; left: -50%; width: 100%; height: 3px; background: var(--line); }
+.evento:first-child::before { display: none; }
+.evento.hecho::before, .evento.actual::before { background: var(--ok); }
+.evento i { position: relative; z-index: 1; display: grid; place-items: center; width: 28px; height: 28px; margin: 0 auto 6px; border-radius: 50%; background: var(--line); font-style: normal; font-weight: 700; }
+.evento.hecho i { background: var(--ok); color: #fff; }
+.evento.actual i { background: var(--blue); color: #fff; box-shadow: 0 0 0 5px var(--soft); }
+.evento.actual { color: var(--text); font-weight: 700; }
+
+.estrellas { display: flex; gap: 6px; justify-content: center; margin: 12px 0; }
+.estrellas button { background: none; border: 0; font-size: 38px; cursor: pointer; color: var(--line); line-height: 1; padding: 0; }
+.estrellas button.on { color: var(--yellow); }
+
+.ayuda { position: fixed; right: 20px; bottom: 20px; width: 54px; height: 54px; border-radius: 50%; background: #2b2f33; color: #fff; display: grid; place-items: center; font-size: 26px; font-weight: 700; box-shadow: 0 3px 10px #0005; }
+
+/* ===== Responsive ===== */
+@media (max-width: 860px) {
+  .cabecera { padding: 0 16px; }
+  .usuario .nombre { display: none; }
+  .contenedor { flex-direction: column; }
+  .menu { width: 100%; border-right: 0; border-bottom: 1px solid var(--line); padding: 12px 16px; }
+  .modo { margin-bottom: 8px; }
+  .menu nav { display: flex; flex-wrap: wrap; column-gap: 14px; }
+  .principal { padding: 18px 16px; }
+  .hoja { padding: 20px 16px; }
+  .dividido { grid-template-columns: 1fr; }
+  .panel.imagen { position: static; order: -1; }
+  .fila { grid-template-columns: 1fr; }
+  h1 { font-size: 24px; }
+}

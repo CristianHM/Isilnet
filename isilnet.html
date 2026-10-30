@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISIL|NET · Inicio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="logo">ISIL<i>|</i>NET</div>
+    <div class="usuario">
+      <span class="nombre">Christian Huaman Mozo</span>
+      <div class="avatar">👤</div>
+    </div>
+  </header>
+
+  <div class="contenedor">
+
+    <aside class="menu">
+      <div class="modo">Estás en modo:
+        <select><option>Estudiante</option></select>
+      </div>
+      <nav>
+        <a class="activo" href="#"><span>🏠</span>Inicio</a>
+        <a href="#"><span>📋</span>Mis Notas</a>
+        <a href="#"><span>📄</span>Documentos Isil</a>
+        <a href="#"><span>💬</span>Consultas Frecuentes</a>
+        <a href="#"><span>👤</span>Mi Perfil</a>
+        <a href="#"><span>➜</span>Salir</a>
+      </nav>
+    </aside>
+
+    <main class="principal">
+
+      <section class="tarjetas">
+        <a class="tarjeta roja" href="#"><div class="icono">🖱️</div><div class="texto">Matrícula<br>2026-20 <span>↗</span></div></a>
+        <a class="tarjeta" href="#"><div class="icono">🧑‍🏫</div><div class="texto">Contáctate con consejería académica <span>↗</span></div></a>
+        <a class="tarjeta" href="#"><div class="icono">💬</div><div class="texto">Contáctate con Servicios al Estudiante <span>↗</span></div></a>
+        <a class="tarjeta" href="#"><div class="icono">📱</div><div class="texto">Revisa tus pagos pendientes <span>↗</span></div></a>
+      </section>
+
+      <div class="pastilla amarilla">🎫 Nuevo: ya puedes tramitar tu carné de medio pasaje desde ISIL|NET, en Trámites académicos.</div>
+
+      <section class="acordeones">
+        <div class="acordeon">
+          <button><span>Mi información académica</span><span class="flecha">⌄</span></button>
+          <div class="contenido"><div class="opcion inactiva">Sin opciones en esta demo</div></div>
+        </div>
+        <div class="acordeon">
+          <button><span>Trámites económicos</span><span class="flecha">⌄</span></button>
+          <div class="contenido"><div class="opcion inactiva">Sin opciones en esta demo</div></div>
+        </div>
+
+        <div class="acordeon abierto">
+          <button><span>Trámites académicos</span><span class="flecha">⌄</span></button>
+          <div class="contenido">
+            <!-- Al hacer clic se abre la página 2 en otra ventana -->
+            <a class="opcion" href="medio-pasaje.html" target="_blank" rel="noopener">
+              Trámite de Carné de Medio Pasaje <span class="nuevo">NUEVO</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="acordeon">
+          <button><span>Servicios ISIL</span><span class="flecha">⌄</span></button>
+          <div class="contenido"><div class="opcion inactiva">Sin opciones en esta demo</div></div>
+        </div>
+        <div class="acordeon">
+          <button><span>Información general académica</span><span class="flecha">⌄</span></button>
+          <div class="contenido"><div class="opcion inactiva">Sin opciones en esta demo</div></div>
+        </div>
+        <div class="acordeon">
+          <button><span>Comunidades ISIL</span><span class="flecha">⌄</span></button>
+          <div class="contenido"><div class="opcion inactiva">Sin opciones en esta demo</div></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="ayuda">?</div>
+
+  <script>
+    document.querySelectorAll(".acordeon > button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        b.parentElement.classList.toggle("abierto");
+      });
+    });
+  </script>
+</body>
+</html>

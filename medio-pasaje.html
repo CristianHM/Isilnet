@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISIL|NET · Trámite de Carné de Medio Pasaje</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <div class="logo">ISIL<i>|</i>NET</div>
+    <div class="usuario">
+      <span class="nombre">Christian Huaman Mozo</span>
+      <div class="avatar">👤</div>
+    </div>
+  </header>
+
+  <div class="fondo">
+    <div class="hoja">
+
+      <a class="volver" href="isilnet.html">‹ Volver a ISIL|NET</a>
+      <h1>Trámite de Carné de Medio Pasaje</h1>
+      <p class="intro">Solicita tu carné de medio pasaje en línea y haz seguimiento a su estado, sin ir a consejería.</p>
+
+      <!-- Indicador de pasos -->
+      <div class="pasos">
+        <div class="paso" data-n="1"><i>1</i>Inicio</div>
+        <div class="paso" data-n="2"><i>2</i>Solicitud</div>
+        <div class="paso" data-n="3"><i>3</i>Confirmación</div>
+        <div class="paso" data-n="4"><i>4</i>Seguimiento</div>
+        <div class="paso" data-n="5"><i>5</i>Recojo</div>
+        <div class="paso" data-n="6"><i>6</i>Opinión</div>
+      </div>
+
+      <!-- PASO 2: Solicitud (formulario a la izquierda, imagen a la derecha) -->
+      <section id="paso-2" class="dividido">
+        <form id="formulario" class="panel" novalidate>
+          <div class="subtitulo primero">Datos del solicitante</div>
+          <div class="fila">
+            <div>
+              <label for="nom">Nombres completos</label>
+              <input id="nom" value="Christian Huaman Mozo">
+              <div class="error" id="e-nom"></div>
+            </div>
+            <div>
+              <label for="dni">DNI</label>
+              <input id="dni" maxlength="8" inputmode="numeric" placeholder="8 dígitos">
+              <div class="error" id="e-dni"></div>
+            </div>
+          </div>
+          <div class="fila">
+            <div>
+              <label for="mail">Correo institucional</label>
+              <input id="mail" type="email" placeholder="usuario@isil.pe">
+              <div class="error" id="e-mail"></div>
+            </div>
+            <div>
+              <label for="car">Carrera</label>
+              <input id="car" placeholder="Ej. Administración de Sistemas">
+              <div class="error" id="e-car"></div>
+            </div>
+          </div>
+          <div class="fila">
+            <div>
+              <label for="ciclo">Ciclo actual</label>
+              <select id="ciclo">
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+              </select>
+            </div>
+            <div>
+              <label for="sede">Sede de recojo</label>
+              <select id="sede">
+                <option>San Isidro</option><option>Miraflores</option><option>La Molina</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="subtitulo">Foto del carné</div>
+          <div class="foto">
+            <div class="foto-perfil">👤</div>
+            <div>Usaremos la foto de tu perfil de ISIL|NET. Si quieres cambiarla, actualízala antes en <b>Mi Perfil</b>.</div>
+          </div>
+
+          <div class="acciones">
+            <button type="submit" class="boton">Enviar solicitud</button>
+            <a class="boton borde" href="isilnet.html">Cancelar</a>
+          </div>
+        </form>
+
+        <aside class="panel imagen">
+          <svg class="carne" viewBox="0 0 420 260" role="img" aria-label="Vista previa del carné">
+            <rect width="420" height="260" rx="18" fill="#fff" stroke="#d5dde5"/>
+            <path d="M0 62V18A18 18 0 0 1 18 0h384a18 18 0 0 1 18 18v44z" fill="#00a9ff"/>
+            <text x="24" y="42" fill="#fff" font-size="26" font-weight="800" letter-spacing="2">ISIL</text>
+            <text x="396" y="30" text-anchor="end" fill="#fff" font-size="11" font-weight="700">CARNÉ DE MEDIO PASAJE</text>
+            <text x="396" y="46" text-anchor="end" fill="#fff" font-size="10">Estudiante universitario</text>
+            <rect x="24" y="80" width="104" height="128" rx="8" fill="#eef2f6" stroke="#d5dde5"/>
+            <circle cx="76" cy="126" r="22" fill="#b8c4d0"/>
+            <path d="M36 204c0-26 18-40 40-40s40 14 40 40z" fill="#b8c4d0"/>
+            <text id="c-nom" x="148" y="100" font-size="15" font-weight="700" fill="#1d2530">Christian Huaman Mozo</text>
+            <text x="148" y="124" font-size="9" font-weight="700" fill="#6c7a89">DNI</text>
+            <text id="c-dni" x="148" y="139" font-size="13" font-weight="600" fill="#1d2530">00000000</text>
+            <text x="148" y="160" font-size="9" font-weight="700" fill="#6c7a89">CARRERA</text>
+            <text id="c-car" x="148" y="175" font-size="13" font-weight="600" fill="#1d2530">Tu carrera</text>
+            <text x="148" y="196" font-size="9" font-weight="700" fill="#6c7a89">CICLO</text>
+            <text id="c-cic" x="148" y="211" font-size="13" font-weight="600" fill="#1d2530">1</text>
+            <text x="230" y="196" font-size="9" font-weight="700" fill="#6c7a89">SEDE DE RECOJO</text>
+            <text id="c-sed" x="230" y="211" font-size="13" font-weight="600" fill="#1d2530">San Isidro</text>
+            <path d="M0 226h420v16a18 18 0 0 1-18 18H18A18 18 0 0 1 0 242z" fill="#ffc72c"/>
+            <text x="210" y="248" text-anchor="middle" font-size="9" font-weight="700" fill="#111">VÁLIDO PARA EL TRANSPORTE URBANO · MEDIO PASAJE</text>
+          </svg>
+          <p class="leyenda">Imagen referencial · se actualiza con tus datos</p>
+          <div class="subtitulo">Ten en cuenta</div>
+          <ul class="lista">
+            <li>Tu foto se valida antes de enviarse al Minedu.</li>
+            <li>Recibirás un código para hacer seguimiento.</li>
+            <li>Al recoger el carné, lleva tu DNI.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- PASO 3: Confirmación -->
+      <section id="paso-3" hidden>
+        <div class="caja centro">
+          <div class="circulo-ok">✓</div>
+          <h2>¡Solicitud registrada!</h2>
+          <p class="gris">Guarda tu código de seguimiento.</p>
+          <div class="codigo" id="codigo"></div>
+          <p><span class="etiqueta">Estado: Recibido</span></p>
+          <p class="gris">Enviamos una copia a <span id="correo"></span></p>
+          <div class="acciones centro"><button class="boton" id="ver-seguimiento">Ver seguimiento</button></div>
+        </div>
+      </section>
+
+      <!-- PASO 4: Seguimiento -->
+      <section id="paso-4" hidden>
+        <div class="caja ancha">
+          <div class="encabezado-caja">
+            <div><b>Código:</b> <span id="codigo2"></span></div>
+            <span class="etiqueta azul" id="estado"></span>
+          </div>
+          <div class="linea-tiempo">
+            <div class="evento" data-i="0"><i>1</i>Registrado</div>
+            <div class="evento" data-i="1"><i>2</i>Foto validada</div>
+            <div class="evento" data-i="2"><i>3</i>Enviado a Minedu</div>
+            <div class="evento" data-i="3"><i>4</i>En proceso</div>
+            <div class="evento" data-i="4"><i>5</i>Listo para recojo</div>
+          </div>
+          <div class="pastilla">Recuerda que el tiempo de emisión del carné depende del Minedu, no de ISIL.</div>
+          <div class="subtitulo">¿Qué significa cada estado?</div>
+          <p style="margin:0 0 4px"><span class="etiqueta">Registrado</span> Recibimos tu solicitud.</p>
+          <p style="margin:0 0 4px"><span class="etiqueta azul">Foto validada</span> Tu foto cumple los requisitos.</p>
+          <p style="margin:0"><span class="etiqueta roja">Enviado a Minedu</span> Esperamos la emisión; te avisaremos aquí cuando esté listo.</p>
+          <div class="acciones"><button class="boton" id="avanzar">Simular avance (demo)</button></div>
+        </div>
+      </section>
+
+      <!-- PASO 5: Resultado -->
+      <section id="paso-5" hidden>
+        <div class="caja">
+          <div class="pastilla verde">🎉 Tu carné está listo para recojo en la Sede <span id="sede-recojo"></span></div>
+          <p style="margin:0">Horario de entrega: lunes a viernes de 9:00 a 20:00 h · sábados de 9:00 a 13:00 h. Lleva tu DNI.</p>
+          <div class="pastilla amarilla">Realiza el pago digital de tu carné antes de recogerlo.</div>
+          <div class="acciones" style="margin-top:0">
+            <button class="boton pago">Pagar con Yape</button>
+            <button class="boton borde pago">Pagar con tarjeta</button>
+          </div>
+          <div class="acciones"><button class="boton" id="finalizar">Finalizar trámite</button></div>
+        </div>
+      </section>
+
+      <!-- PASO 6: Retroalimentación -->
+      <section id="paso-6" hidden>
+        <div class="caja centro" id="encuesta">
+          <div class="circulo-ok">✓</div>
+          <h2>Trámite finalizado</h2>
+          <p class="gris">Cuéntanos cómo fue tu experiencia con este servicio web.</p>
+          <div class="estrellas" id="estrellas"></div>
+          <textarea placeholder="Comentarios (opcional)"></textarea>
+          <div class="acciones centro"><button class="boton" id="enviar" disabled>Enviar opinión</button></div>
+        </div>
+        <div class="caja centro" id="gracias" hidden>
+          <div class="circulo-ok">★</div>
+          <h2>¡Gracias por tu opinión!</h2>
+          <p class="gris">Calificaste con <span id="nota"></span> de 5 estrellas. Tu respuesta ayuda a mejorar ISIL|NET.</p>
+          <div class="acciones centro"><a class="boton borde" href="isilnet.html">Volver a ISIL|NET</a></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="ayuda">?</div>
+  <script src="medio-pasaje.js"></script>
+</body>
+</html>
